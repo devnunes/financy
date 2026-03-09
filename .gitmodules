@@ -1,0 +1,6 @@
+[submodule "financy-server"]
+	path = financy-server
+	url = https://github.com/devnunes/financy-server.git
+[submodule "financy-web"]
+	path = financy-web
+	url = https://github.com/devnunes/financy-web.git
