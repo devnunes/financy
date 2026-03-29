@@ -1,0 +1,3 @@
+packages:
+  - 'financy-server'
+  - 'financy-web'
