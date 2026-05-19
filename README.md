@@ -29,15 +29,15 @@ git submodule update --init --recursive
 
 - Account creation and sign in: implemented
 - User can manage only their own transactions: implemented
-- User can manage only their own categories: backend implemented, frontend UI still evolving
+- User can manage only their own categories: implemented
 - Create transaction: implemented
 - Delete transaction: implemented
 - Edit transaction: implemented
 - List transactions: implemented
-- Create category: backend implemented, frontend UI still evolving
-- Delete category: backend implemented, frontend UI still evolving
-- Edit category: backend implemented, frontend UI still evolving
-- List categories: backend implemented, frontend UI still evolving
+- Create category: implemented
+- Delete category: implemented
+- Edit category: implemented
+- List categories: implemented
 
 ## Prerequisites
 
