@@ -90,6 +90,23 @@ pnpm dev
 
 Frontend app: http://localhost:5173
 
+### 6. Demo User (Seed)
+
+After running the seed, you can log in with this demo user:
+
+#### Email:
+```text
+seeduser@example.com
+```
+#### Password: 
+```text
+hashedpassword
+```
+
+*If you change the seed, update the password above accordingly.*
+
+> The seed script automatically creates this user to make testing and validation easier.
+
 ---
 
 ## 📁 Monorepo Structure
@@ -125,59 +142,10 @@ See each folder's README for more details and advanced usage.
 
 ---
 
-## ℹ️ More Info
 
-- Backend setup, environment variables, and scripts: [financy-server/README.md](./financy-server/README.md)
-- Frontend setup, scripts, and structure: [financy-web/README.md](./financy-web/README.md)
 
-## Prerequisites
 
-- Node.js 20+
-- pnpm
-- Git with submodules initialized
 
-## Run the Full Project
-
-### 1. Backend
-
-```bash
-cd financy-server
-pnpm install
-cp .env.example .env.dev
-# Add COOKIE_SECRET if it is missing in .env.dev
-pnpm dev:generate
-pnpm dev:migrate
-pnpm dev
-```
-
-GraphQL API: `http://localhost:3333/graphql`
-
-### 2. Frontend
-
-```bash
-cd financy-web
-pnpm install
-pnpm dev
-```
-
-Web app: `http://localhost:5173`
-
-### 3. Demo User (Seed)
-
-After running the seed, you can log in with this demo user:
-
-#### Email:
-```text
-seeduser@example.com
-```
-#### Password: 
-```text
-hashedpassword
-```
-
-*If you change the seed, update the password above accordingly.*
-
-> The seed script automatically creates this user to make testing and validation easier.
 
 ## Tests and Quality
 
@@ -189,3 +157,8 @@ hashedpassword
 - Backend GraphQL schema is generated from registered resolvers.
 - Frontend authentication flow and route protection are available.
 - Dashboard, transactions, and categories UX in the frontend are under active iteration.
+
+## ℹ️ More Info
+
+- Backend setup, environment variables, and scripts: [financy-server/README.md](./financy-server/README.md)
+- Frontend setup, scripts, and structure: [financy-web/README.md](./financy-web/README.md)
