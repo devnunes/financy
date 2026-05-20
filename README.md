@@ -1,9 +1,9 @@
-
 # Financy
 
 <p align="center">
 	<b>Full-stack financial management app</b><br>
 	<i>Built as a final postgraduate project at Rocketseat Faculty of Technology</i>
+	<img src="./screenshot/dashboard.png" alt="Dashboard Screenshot">
 </p>
 
 ---
@@ -53,8 +53,7 @@ pnpm install
 
 ```bash
 cd financy-server
-pnpm dev:db:build   # generate Prisma client, create/apply migrations
-pnpm dev:db:seed    # (optional) seed the database
+pnpm dev:db   # generate Prisma client, create/apply migrations, and seed the database
 pnpm dev            # start the backend server
 ```
 
@@ -73,9 +72,10 @@ Frontend app: http://localhost:5173
 
 ## 🖼️ Screenshots
 
-<!-- Add screenshots below. Example: -->
-<!-- ![Dashboard Screenshot](./financy-web/public/screenshot-dashboard.png) -->
-<!-- ![Transactions Screenshot](./financy-web/public/screenshot-transactions.png) -->
+Here are some screenshots of the project:
+
+
+
 
 ---
 
