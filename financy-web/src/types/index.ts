@@ -1,0 +1,83 @@
+import type { IconName } from '@/components/Icon'
+
+export interface User {
+  id: string
+  name: string
+  email: string
+  initials?: string
+  createdAt?: string
+  updatedAt?: string
+}
+
+export interface Transaction {
+  id: string
+  amount: number
+  amountLabel?: string
+  description: string
+  type: 'income' | 'expense'
+  date: string
+  dateLabel?: string
+  userId: string
+  categoryId: string
+  createdAt?: string
+  updatedAt?: string
+  user?: User
+  category?: Category
+}
+
+export type TagColor =
+  | 'transparent'
+  | 'gray'
+  | 'blue'
+  | 'purple'
+  | 'pink'
+  | 'red'
+  | 'orange'
+  | 'yellow'
+  | 'green'
+
+export interface Category {
+  id: string
+  title: string
+  description: string
+  icon: IconName
+  color: TagColor
+  userId: string
+  createdAt?: string
+  updatedAt?: string
+  user?: User
+  transactions?: Transaction[]
+  transactionCount?: number
+}
+
+export interface UserBalance {
+  balance: number
+  income: number
+  expenses: number
+}
+
+export interface CategoriesAggregated {
+  id: string
+  title: string
+  icon: IconName
+  color: TagColor
+  totalAmount: number
+  transactionCountByCategory: number
+}
+
+export interface AuthInput {
+  name?: string
+  email: string
+  password: string
+}
+
+export interface SignInInput {
+  email: string
+  password: string
+}
+
+export interface AuthOutput {
+  id: string
+  name: string
+  email: string
+}
