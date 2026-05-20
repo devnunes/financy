@@ -3,7 +3,7 @@
 <p align="center">
 	<b>Full-stack financial management app</b><br>
 	<i>Built as a final postgraduate project at Rocketseat Faculty of Technology</i>
-	<img src="./financy-web/screenshot/dashboard.png" alt="Dashboard Screenshot">
+	<img src="./frontend/screenshot/dashboard.png" alt="Dashboard Screenshot">
 </p>
 
 ---
@@ -35,14 +35,14 @@ pnpm install
 ### 4. Setup backend
 
 ```bash
-cd financy-server 
+cd backend 
 ```
 
 - Environment variables
 
 ```bash
 cp .env.example .env.dev
-# Edit .env.dev if needed (see financy-server/README.md for required variables)
+# Edit .env.dev if needed (see backend/README.md for required variables)
 ```
 
 - Install dependencies
@@ -64,14 +64,14 @@ Backend GraphQL API: http://localhost:3333/graphql
 ### 5. Setup frontend
 
 ```bash
-cd financy-web
+cd frontend
 ```
 
 - Setup environment variables
 
 ```bash
 cp .env.example .env.dev
-# Edit .env.dev if needed (see financy-web/README.md for frontend variables)
+# Edit .env.dev if needed (see frontend/README.md for frontend variables)
 ```
 
 - Install dependencies
@@ -110,8 +110,8 @@ hashedpassword
 
 ## 📁 Monorepo Structure
 
-- `financy-server`: GraphQL API (Fastify, Apollo Server, TypeGraphQL, Prisma)
-- `financy-web`: React + Vite web client (Apollo Client)
+- `backend`: GraphQL API (Fastify, Apollo Server, TypeGraphQL, Prisma)
+- `frontend`: React + Vite web client (Apollo Client)
 
 See each folder's README for more details and advanced usage.
 
@@ -159,5 +159,5 @@ See each folder's README for more details and advanced usage.
 
 ## ℹ️ More Info
 
-- Backend setup, environment variables, and scripts: [financy-server/README.md](./financy-server/README.md)
-- Frontend setup, scripts, and structure: [financy-web/README.md](./financy-web/README.md)
+- Backend setup, environment variables, and scripts: [backend/README.md](./backend/README.md)
+- Frontend setup, scripts, and structure: [frontend/README.md](./frontend/README.md)

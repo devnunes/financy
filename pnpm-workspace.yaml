@@ -1,6 +1,6 @@
 packages:
-  - 'financy-server'
-  - 'financy-web'
+  - 'backend'
+  - 'frontend'
 allowBuilds:
   '@apollo/protobufjs': false
   '@prisma/engines': true
