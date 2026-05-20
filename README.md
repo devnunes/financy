@@ -1,31 +1,102 @@
+
 # Financy
 
-Full-stack financial management application built as a final postgraduate project at Rocketseat Faculty of Technology.
+<p align="center">
+	<b>Full-stack financial management app</b><br>
+	<i>Built as a final postgraduate project at Rocketseat Faculty of Technology</i>
+</p>
 
-## Project Goal
+---
 
-Financy allows each user to manage personal finances with authentication, transactions, and categories, while keeping data isolated per account.
+## 🚀 Quick Start (First Run)
 
-## Monorepo Structure
+Follow these steps to get the project running locally for the first time:
 
-This workspace uses Git submodules:
+### 1. Prerequisites
 
-- `financy-server`: GraphQL API with Fastify, Apollo Server, TypeGraphQL, and Prisma
-- `financy-web`: React + Vite web client with Apollo Client
+- [Node.js 20+](https://nodejs.org/)
+- [pnpm](https://pnpm.io/)
+- [Git](https://git-scm.com/)
 
-If submodules are not initialized yet:
+### 2. Clone the repository and initialize submodules
 
 ```bash
+git clone <repo-url>
+cd financy
 git submodule update --init --recursive
 ```
 
-## Main Technologies
+### 3. Setup backend environment variables
+
+```bash
+cd financy-server
+cp .env.example .env.dev
+# Edit .env.dev if needed (see financy-server/README.md for required variables)
+```
+
+### 4. Install dependencies
+
+```bash
+# In the root folder
+pnpm install
+
+# In backend
+cd financy-server
+pnpm install
+
+# In frontend
+cd ../financy-web
+pnpm install
+```
+
+### 5. Prepare and run the backend
+
+```bash
+cd financy-server
+pnpm dev:db:build   # generate Prisma client, create/apply migrations
+pnpm dev:db:seed    # (optional) seed the database
+pnpm dev            # start the backend server
+```
+
+Backend GraphQL API: http://localhost:3333/graphql
+
+### 6. Run the frontend
+
+```bash
+cd financy-web
+pnpm dev
+```
+
+Frontend app: http://localhost:5173
+
+---
+
+## 🖼️ Screenshots
+
+<!-- Add screenshots below. Example: -->
+<!-- ![Dashboard Screenshot](./financy-web/public/screenshot-dashboard.png) -->
+<!-- ![Transactions Screenshot](./financy-web/public/screenshot-transactions.png) -->
+
+---
+
+## 📁 Monorepo Structure
+
+- `financy-server`: GraphQL API (Fastify, Apollo Server, TypeGraphQL, Prisma)
+- `financy-web`: React + Vite web client (Apollo Client)
+
+See each folder's README for more details and advanced usage.
+
+---
+
+## 🛠️ Main Technologies
 
 - Backend: Node.js, TypeScript, Fastify, Apollo Server, TypeGraphQL, Prisma, SQLite, Vitest
 - Frontend: React 19, TypeScript, Vite, Apollo Client, React Hook Form, Zod, Zustand, Tailwind CSS
 - Quality: Biome, Vitest
 
-## Challenge Requirements Status
+---
+
+## ✅ Challenge Requirements Status
 
 - Account creation and sign in: implemented
 - User can manage only their own transactions: implemented
@@ -38,6 +109,13 @@ git submodule update --init --recursive
 - Delete category: implemented
 - Edit category: implemented
 - List categories: implemented
+
+---
+
+## ℹ️ More Info
+
+- Backend setup, environment variables, and scripts: [financy-server/README.md](./financy-server/README.md)
+- Frontend setup, scripts, and structure: [financy-web/README.md](./financy-web/README.md)
 
 ## Prerequisites
 

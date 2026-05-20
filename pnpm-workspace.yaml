@@ -8,4 +8,7 @@ allowBuilds:
   esbuild: true
   msw: false
   prisma: true
-
+minimumReleaseAgeExclude:
+  - '@types/node@25.9.1'
+  - '@types/react@19.2.15'
+  - tsx@4.22.3
