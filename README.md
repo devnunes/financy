@@ -162,6 +162,23 @@ pnpm dev
 
 Web app: `http://localhost:5173`
 
+### 3. Demo User (Seed)
+
+After running the seed, you can log in with this demo user:
+
+#### Email:
+```text
+seeduser@example.com
+```
+#### Password: 
+```text
+hashedpassword
+```
+
+*If you change the seed, update the password above accordingly.*
+
+> The seed script automatically creates this user to make testing and validation easier.
+
 ## Tests and Quality
 
 - Backend tests: `pnpm test`, `pnpm test:watch`, `pnpm test:coverage`
