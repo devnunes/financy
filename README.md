@@ -26,56 +26,69 @@ cd financy
 git submodule update --init --recursive
 ```
 
-### 3. Setup backend environment variables
-
-```bash
-cd financy-server
-cp .env.example .env.dev
-# Edit .env.dev if needed (see financy-server/README.md for required variables)
-```
-
-### 4. Install dependencies
+### 3. Install monorepo dependencies
 
 ```bash
 # In the root folder
 pnpm install
+```
 
+### 4. Setup backend
+
+```bash
+cd financy-server 
+```
+
+- Environment variables
+
+```bash
+cp .env.example .env.dev
+# Edit .env.dev if needed (see financy-server/README.md for required variables)
+```
+
+- Install dependencies
+
+```bash
 # In backend
-cd financy-server
-pnpm install
-
-# In frontend
-cd ../financy-web
 pnpm install
 ```
 
-### 5. Prepare and run the backend
+- Run the backend
 
 ```bash
-cd financy-server
 pnpm dev:db   # generate Prisma client, create/apply migrations, and seed the database
 pnpm dev            # start the backend server
 ```
 
 Backend GraphQL API: http://localhost:3333/graphql
 
-### 6. Run the frontend
+### 5. Setup front 
 
 ```bash
-cd financy-web
+cd financy-server 
+```
+
+- Setup environment variables
+
+```bash
+cp .env.example .env.dev
+# Edit .env.dev if needed (see financy-server/README.md for required variables)
+```
+
+- Install dependencies
+
+```bash
+# In the root folder
+pnpm install
+```
+
+- Run the frontend
+
+```bash
 pnpm dev
 ```
 
 Frontend app: http://localhost:5173
-
----
-
-## 🖼️ Screenshots
-
-Here are some screenshots of the project:
-
-
-
 
 ---
 
