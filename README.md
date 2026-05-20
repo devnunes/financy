@@ -18,12 +18,11 @@ Follow these steps to get the project running locally for the first time:
 - [pnpm](https://pnpm.io/)
 - [Git](https://git-scm.com/)
 
-### 2. Clone the repository and initialize submodules
+### 2. Clone the repository
 
 ```bash
 git clone <repo-url>
 cd financy
-git submodule update --init --recursive
 ```
 
 ### 3. Install monorepo dependencies
@@ -62,23 +61,23 @@ pnpm dev            # start the backend server
 
 Backend GraphQL API: http://localhost:3333/graphql
 
-### 5. Setup front 
+### 5. Setup frontend
 
 ```bash
-cd financy-server 
+cd financy-web
 ```
 
 - Setup environment variables
 
 ```bash
 cp .env.example .env.dev
-# Edit .env.dev if needed (see financy-server/README.md for required variables)
+# Edit .env.dev if needed (see financy-web/README.md for frontend variables)
 ```
 
 - Install dependencies
 
 ```bash
-# In the root folder
+# In frontend
 pnpm install
 ```
 
