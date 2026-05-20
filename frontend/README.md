@@ -50,7 +50,7 @@ If you are new to programming, start from the [main README](../README.md) for a 
 
 ## ⚙️ Local Development (Frontend Only)
 
-**Note:** The backend must be running for the frontend to work. See [financy-server/README.md](../financy-server/README.md) for backend setup.
+**Note:** The backend must be running for the frontend to work. See [backend/README.md](../backend/README.md) for backend setup.
 
 1. **Install dependencies**
 	```bash

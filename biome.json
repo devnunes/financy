@@ -12,7 +12,7 @@
       "!!**/dist",
       "!!**/build",
       "!!./src/prisma/generated",
-      "!!./financy-server/schema.graphql",
+      "!!./backend/schema.graphql",
       "!!**/tsconfig*.json"
     ]
   },
