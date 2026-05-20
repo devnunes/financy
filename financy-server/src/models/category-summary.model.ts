@@ -1,18 +1,4 @@
 import { Field, Float, ID, Int, ObjectType } from 'type-graphql'
-@ObjectType()
-export class CategoriesSummaryModel {
-  @Field(() => [CategoriesAggregatedModel])
-  categories!: CategoriesAggregatedModel[]
-
-  @Field(() => Float)
-  transactionCountByUser!: number
-
-  @Field(() => Float)
-  categoryCount!: number
-
-  @Field(() => CategoriesAggregatedModel)
-  mostUsedCategory!: CategoriesAggregatedModel
-}
 
 @ObjectType()
 export class CategoriesAggregatedModel {
@@ -33,4 +19,19 @@ export class CategoriesAggregatedModel {
 
   @Field(() => Int)
   transactionCountByCategory!: number
+}
+
+@ObjectType()
+export class CategoriesSummaryModel {
+  @Field(() => [CategoriesAggregatedModel])
+  categories!: CategoriesAggregatedModel[]
+
+  @Field(() => Float)
+  transactionCountByUser!: number
+
+  @Field(() => Float)
+  categoryCount!: number
+
+  @Field(() => CategoriesAggregatedModel)
+  mostUsedCategory!: CategoriesAggregatedModel
 }

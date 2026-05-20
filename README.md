@@ -3,7 +3,7 @@
 <p align="center">
 	<b>Full-stack financial management app</b><br>
 	<i>Built as a final postgraduate project at Rocketseat Faculty of Technology</i>
-	<img src="./screenshot/dashboard.png" alt="Dashboard Screenshot">
+	<img src="./financy-web/screenshot/dashboard.png" alt="Dashboard Screenshot">
 </p>
 
 ---
