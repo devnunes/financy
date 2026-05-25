@@ -23,13 +23,17 @@ If you are new to programming, start from the [main README](../README.md) for a 
 	# Edit .env.dev if needed (see below for required variables)
 	```
 
+
 3. **Prepare database and start server**
 	```bash
-	pnpm dev:db:generate   # generate Prisma client
-	pnpm dev:db:migrate    # create/apply migrations
-	pnpm dev:db:seed       # (optional) seed the database
+	pnpm dev:generate      # generate Prisma client
+	pnpm dev:migrate       # create/apply migrations
+	pnpm dev:seed          # (optional) seed the database
+	# Or run everything at once:
+	pnpm dev:db            # runs generate, migrate, and seed in sequence
 	pnpm dev               # start the backend server
 	```
+
 
 API endpoint: http://localhost:3333/graphql
 
@@ -68,20 +72,49 @@ DATABASE_URL="file:./prisma/dev.db"
 ## 🧪 Scripts & Testing
 
 
-Common scripts:
+
+### Common scripts
 
 ```bash
+# Development
 pnpm dev                # start server in development mode (.env.dev)
-pnpm dev:db:generate    # generate Prisma client
-pnpm dev:db:migrate     # create/apply migrations
-pnpm dev:db:seed        # run seed via Prisma in development
-pnpm dev:db:studio      # open Prisma Studio in development
-pnpm prod:db:generate   # generate Prisma client for production
-pnpm prod:db:migrate    # apply migrations in production (.env.prod)
+pnpm dev:generate       # generate Prisma client
+pnpm dev:migrate        # create/apply migrations
+pnpm dev:seed           # run seed via Prisma in development
+pnpm dev:db             # generate, migrate, and seed in sequence
+pnpm dev:studio         # open Prisma Studio in development
+
+# Production
+pnpm prod:generate      # generate Prisma client for production
+pnpm prod:migrate       # apply migrations in production (.env.prod)
 pnpm build              # build production bundle
+
+# Tests
 pnpm test               # run tests once (.env.test)
 pnpm test:watch         # run tests in watch mode (.env.test)
 pnpm test:coverage      # run tests with coverage (.env.test)
+
+# Code quality
+pnpm lint               # check lint issues with Biome
+pnpm typecheck          # check TypeScript types
+pnpm format             # format code with Biome
+pnpm precommit          # run lint, typecheck, and test before commit
+```
+---
+
+## ⚠️ Note about path alias (@)
+
+The project uses the @ alias for imports from src. The `tsx` runner does not automatically resolve these aliases. If you get an import error when running `pnpm dev`, use relative paths or configure a tool like `tsconfig-paths`.
+
+Example error:
+```
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@/prisma' imported from ...
+```
+
+Quick solution: change the import to a relative path or add `tsconfig-paths` as a dev dependency and run:
+```
+pnpm add -D tsconfig-paths
+tsconfig-paths-register && tsx watch --env-file .env.dev src/index.ts
 ```
 
 Test coverage includes:

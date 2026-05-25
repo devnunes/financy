@@ -1,43 +1,5 @@
 # Financy Web
 
-Frontend application for the Financy project, built as part of a final postgraduate project at Rocketseat Faculty of Technology.
-
-## Goal
-
-Deliver the web interface for user authentication and financial management, consuming the Financy GraphQL API.
-
-## Stack
-
-- React 19
-- TypeScript
-- Vite
-- Apollo Client
-- React Hook Form + Zod
-- Zustand
-- Tailwind CSS
-- Biome
-
-## Prerequisites
-
-- Node.js 20+
-- pnpm
-- Financy backend running locally
-
-## Backend Integration
-
-Apollo Client behavior:
-
-- Uses `VITE_BACKEND_URL`
-- Sends cookies with `credentials: include`
-
-Development proxy behavior:
-
-- Vite proxies `/graphql` to `http://localhost:3333`
-- This allows local frontend calls without hardcoding an absolute API URL
-pnpm lint:biome   # run biome lint
-
-# Financy Web
-
 Frontend application for the Financy project.
 
 ---
@@ -50,7 +12,7 @@ If you are new to programming, start from the [main README](../README.md) for a 
 
 ## ⚙️ Local Development (Frontend Only)
 
-**Note:** The backend must be running for the frontend to work. See [backend/README.md](../backend/README.md) for backend setup.
+**Note:** The backend must be running for the frontend to work. See [backend/README.md](../backend/README.md) for backend setup instructions.
 
 1. **Install dependencies**
 	```bash
@@ -61,14 +23,14 @@ If you are new to programming, start from the [main README](../README.md) for a 
 	pnpm dev
 	```
 
-Frontend app: http://localhost:5173
+App: http://localhost:5173
 
 ---
 
 ## 🔗 Backend Integration
 
-- Apollo Client uses `VITE_BACKEND_URL` and sends cookies with `credentials: include`.
-- Vite proxies `/graphql` to `http://localhost:3333` for local development.
+- Apollo Client uses the `VITE_BACKEND_URL` environment variable and sends cookies with `credentials: include`.
+- Vite proxies `/graphql` to `http://localhost:3333` during development.
 
 ---
 
@@ -77,29 +39,41 @@ Frontend app: http://localhost:5173
 - `src/pages`: application pages
 - `src/router`: routing and route guards
 - `src/lib/graphql`: Apollo client, queries, and mutations
-- `src/stores`: global state stores
-- `src/components`: reusable UI components
+- `src/stores`: global state
+- `src/components`: reusable components
 
 ---
 
 ## 🧪 Scripts & Quality
 
-Common scripts:
+Main scripts:
 ```bash
-pnpm dev          # start Vite development server
-pnpm build        # run TypeScript build and create production bundle
-pnpm preview      # preview production bundle locally
-pnpm format       # format code with Biome
-pnpm lint         # run biome check
-pnpm lint:biome   # run biome lint
-pnpm check:biome  # run biome check
+# Development
+pnpm dev           # start Vite development server
+pnpm preview       # preview the production bundle locally
+
+# Build
+pnpm build         # run TypeScript build and create production bundle
+pnpm build:check   # lint, typecheck, and build in sequence
+
+# Code quality
+pnpm lint          # check lint issues with Biome
+pnpm format        # format code with Biome
+pnpm typecheck     # check TypeScript types
+pnpm precommit     # lint, format, and typecheck before commit
 ```
 
 ---
 
-## ✅ Current Feature Status
+## ✅ Feature Status
 
-- Authentication (sign in, sign up, session sync with `me`): implemented
-- Public and protected routing: implemented
+- Authentication (login, sign up, session): implemented
+- Public and protected routes: implemented
 - Authenticated routes: `/dashboard`, `/transactions`, `/categories`, `/profile`
-- Dashboard, transactions, and categories pages: todas as funcionalidades do desafio implementadas e estáveis
+- Dashboard, transactions, and categories: all required features implemented
+
+---
+
+## ⚠️ Note about path alias (@)
+
+The project uses the @ alias for imports from src. Vite resolves this alias automatically, but other environments may not. If you run scripts outside Vite, ensure the environment supports path alias or use relative paths.
